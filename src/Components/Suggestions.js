@@ -1,3 +1,5 @@
+import Suggestion from "./Suggestion"
+
 export default function Suggestions() {
   const Suggestions = [
     {image:"assets/img/bad.vibes.memes.svg", name:"bad.vibes.memes", text:"Segue você"},
@@ -13,19 +15,11 @@ export default function Suggestions() {
           Sugestões para você
           <div>Ver tudo</div>
         </div>
-        {Suggestions.map(Suggestion => (
-          <div class="sugestao">
-            <div class="usuario">
-              <img src={Suggestion.image} alt="smallcutecats"/>
-              <div class="texto">
-                <div class="nome">{Suggestion.name}</div>
-                <div class="razao">{Suggestion.text}</div>
-              </div>
-            </div>
 
-            <div class="seguir">Seguir</div>
-            </div>
-        ))}  
+        {Suggestions.map(suggestion => (
+          <Suggestion image={suggestion.image} name={suggestion.name} text={suggestion.text} />
+        ))} 
+
       </div>
     )
 }
